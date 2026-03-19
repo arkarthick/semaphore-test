@@ -1,6 +1,6 @@
 ---
 - name: Modify file on target
-  hosts: targets
+  hosts: devops
   become: yes
   tasks:
     - name: Update line in config file
