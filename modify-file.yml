@@ -1,0 +1,14 @@
+---
+- name: Modify file on target
+  hosts: targets
+  become: yes
+  tasks:
+    - name: Update line in config file
+      ansible.builtin.lineinfile:
+        path: /home/ubuntu/conf.txt
+        regexp: '^name=ram'
+        line: 'name=karthick'
+      # Or use shell for custom script:
+      # - name: Run shell script to modify file
+      #   shell: |
+      #     sed -i 's/old/new/g' /path/to/your/file.conf
